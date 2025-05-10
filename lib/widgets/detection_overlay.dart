@@ -7,11 +7,11 @@ class DetectionOverlay extends StatelessWidget {
   final Size screenSize;
 
   const DetectionOverlay({
-    Key? key,
+    super.key,
     required this.detections,
     required this.previewSize,
     required this.screenSize,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

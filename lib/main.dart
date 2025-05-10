@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:camera/camera.dart';
 import 'package:permission_handler/permission_handler.dart';
+import 'package:provider/provider.dart';
 import 'package:vision_ai/screens/home_screen.dart';
-import 'package:vision_ai/screens/vision_screen.dart';
+import 'package:vision_ai/services/provider.dart';
 
 List<CameraDescription> cameras = [];
 
@@ -45,29 +46,36 @@ Future<void> main() async {
 }
 
 class VisionAIApp extends StatelessWidget {
-  const VisionAIApp({Key? key}) : super(key: key);
+  const VisionAIApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Vision AI',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(
-          seedColor: const Color(0xFF6750A4),
-          brightness: Brightness.light,
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(
+          create: (_) => VisionProvider(),
         ),
-        useMaterial3: true,
-      ),
-      darkTheme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(
-          seedColor: const Color(0xFF6750A4),
-          brightness: Brightness.dark,
+      ],
+      child: MaterialApp(
+        title: 'Vision AI',
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+          colorScheme: ColorScheme.fromSeed(
+            seedColor: const Color(0xFF6750A4),
+            brightness: Brightness.light,
+          ),
+          useMaterial3: true,
         ),
-        useMaterial3: true,
+        darkTheme: ThemeData(
+          colorScheme: ColorScheme.fromSeed(
+            seedColor: const Color(0xFF6750A4),
+            brightness: Brightness.dark,
+          ),
+          useMaterial3: true,
+        ),
+        themeMode: ThemeMode.system,
+        home: const HomeScreen(), // Start with HomeScreen
       ),
-      themeMode: ThemeMode.system,
-      home: const HomeScreen(), // Start with HomeScreen
     );
   }
 }

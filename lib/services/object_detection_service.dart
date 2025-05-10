@@ -8,8 +8,8 @@ class ObjectDetectionService {
   
   Future<void> initialize() async {
     await Tflite.loadModel(
-      model: 'assets/models/yolov8n.tflite',
-      labels: 'assets/models/yolov5s_labels.txt',
+      model: 'assets/models/model.tflite',
+      labels: 'assets/models/labels.txt',
       numThreads: 4,
     );
     

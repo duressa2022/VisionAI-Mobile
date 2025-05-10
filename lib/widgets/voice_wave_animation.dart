@@ -6,10 +6,10 @@ class VoiceWaveAnimation extends StatelessWidget {
   final bool isListening;
   
   const VoiceWaveAnimation({
-    Key? key,
+    super.key,
     required this.animationController,
     required this.isListening,
-  }) : super(key: key);
+  });
   
   @override
   Widget build(BuildContext context) {

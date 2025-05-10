@@ -32,11 +32,11 @@ class VoiceRecognitionService {
           onResult?.call(result.recognizedWords);
         }
       },
-      listenFor: const Duration(seconds: 30),
+      listenFor: const Duration(seconds: 10),
       pauseFor: const Duration(seconds: 3),
-      partialResults: false,
+      partialResults: true,
       localeId: 'en_US',
-      cancelOnError: true,
+      cancelOnError: false,
     );
   }
 
@@ -44,6 +44,8 @@ class VoiceRecognitionService {
     await _speechToText.stop();
     onListeningStatusChanged?.call(false);
   }
+
+  bool get isListening => _speechToText.isListening;
 
   void dispose() {
     _speechToText.cancel();

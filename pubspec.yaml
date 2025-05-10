@@ -16,8 +16,9 @@ dependencies:
   flutter_tflite: ^1.0.1
   http: ^1.1.0
   path_provider: ^2.1.1
-  provider: ^6.0.5
+  provider: ^6.1.5
   cupertino_icons: ^1.0.6
+  string_similarity: ^2.0.0
 
 dev_dependencies:
   flutter_test:
@@ -28,5 +29,5 @@ flutter:
   uses-material-design: true
   
   assets:
-    - assets/models/yolov8n.tflite
-    - assets/models/yolov5s_labels.txt
+    - assets/models/model.tflite
+    - assets/models/labels.txt
