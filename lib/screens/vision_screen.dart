@@ -127,6 +127,15 @@ class _VisionScreenState extends State<VisionScreen>
       "vision what do you see",
       "look around for me",
       "tell me what you see",
+      "what is",
+      "what's",
+      "vision",
+      "vision ai",
+      "happening",
+      "happening around",
+      "happening around me",
+      "me",
+      "around",
     ];
 
     final stopPhrases = [
@@ -176,32 +185,33 @@ class _VisionScreenState extends State<VisionScreen>
     if (_isCapturing) return;
 
     List<String> statusMessages = [
-      "Hang tight, scanning your surroundings now!",
-      "Analyzing the environment, just a moment.",
-      "Starting a 30-second scan, stay still!",
-      "Let's see what's around you!",
-      "Initiating environment scan for 30 seconds.",
-      "Exploring your surroundings, please wait.",
-      "Launching a detailed 30-second scan.",
-      "Give me 30 seconds to scan everything!",
-      "Checking out your environment now.",
-      "Looking around for anything interesting.",
-      "Vision is analyzing the scene now.",
-      "Scanning in progress, hold on!",
-      "Let’s explore what’s around you!",
-      "Hold tight, gathering details nearby.",
-      "Detecting objects in your environment.",
-      "Processing everything I see...",
-      "Working on capturing the scene!",
-      "Environment analysis started.",
-      "Performing a deep scan of surroundings.",
-      "Capturing and analyzing for 30 seconds.",
-      "Sit back, Vision is scanning the view.",
-      "Your environment is being analyzed.",
-      "Give me a moment to check things out.",
-      "A 30-second scan begins now!",
-      "Starting full-frame capture for analysis.",
+      "Hang tight, scanning your surroundings now! This will just take a few moments. Let’s see what we can discover together.",
+      "Analyzing the environment, just a moment. I’m collecting all the visual details for a better understanding. Stay still if you can!",
+      "Starting a 30-second scan, stay still! I need this time to capture everything clearly. Let’s make it count.",
+      "Let's see what's around you! I’m opening my lenses wide to get a full view. This should only take a bit.",
+      "Initiating environment scan for 30 seconds. I'm diving into every detail around you. Hang on while I work my magic.",
+      "Exploring your surroundings, please wait. I’m processing objects, textures, and more. This won't take long.",
+      "Launching a detailed 30-second scan. Please remain steady. Every second helps me see better.",
+      "Give me 30 seconds to scan everything! I’ll be analyzing what I capture in real time. Thanks for your patience.",
+      "Checking out your environment now. Let’s uncover everything that’s in view. Just a short moment!",
+      "Looking around for anything interesting. I’ll notify you once I’ve gathered enough information. Stay tuned!",
+      "Vision is analyzing the scene now. I’m picking up every detail I can. You’ll have results shortly.",
+      "Scanning in progress, hold on! I’m collecting data from every angle I can see. Thanks for bearing with me.",
+      "Let’s explore what’s around you! I’m processing visuals to provide the best insights possible. Sit tight!",
+      "Hold tight, gathering details nearby. I’m focusing on every object and surface. Almost there!",
+      "Detecting objects in your environment. From edges to colors, I’m mapping it all. Keep steady for best results.",
+      "Processing everything I see... This includes lighting, depth, and shapes. I’ll let you know what I find soon.",
+      "Working on capturing the scene! It’s a bit like painting a picture in real-time. Give me a few more seconds.",
+      "Environment analysis started. I’ll be watching closely for all visible elements. Hold on while I work.",
+      "Performing a deep scan of surroundings. Looking into objects, context, and spatial relationships. Please be patient.",
+      "Capturing and analyzing for 30 seconds. I’m taking in everything around. Sit back and relax!",
+      "Sit back, Vision is scanning the view. Every detail helps me understand your surroundings better. Thanks for your patience.",
+      "Your environment is being analyzed. I’ll give you results as soon as I finish processing. Almost there!",
+      "Give me a moment to check things out. I’m doing a thorough scan for full accuracy. Be right with you!",
+      "A 30-second scan begins now! I’ll use every second to learn about your surroundings. Please hold steady!",
+      "Starting full-frame capture for analysis. I’ll take in the entire scene to ensure nothing gets missed. This will be quick!",
     ];
+
 
     final randomStatus = statusMessages[
         DateTime.now().millisecondsSinceEpoch % statusMessages.length];
@@ -253,37 +263,38 @@ class _VisionScreenState extends State<VisionScreen>
     }
 
     final goodbyeMessages = [
-      "Goodbye, buddy!",
-      "It was great helping you today!",
-      "Hope I made your day easier.",
-      "Signing off now, take care!",
-      "Catch you later, friend.",
-      "Vision is closing, have a great day!",
-      "Thanks for spending time with me!",
-      "I’ll be here when you need me next.",
-      "Ending session now, goodbye!",
-      "See you next time!",
-      "Hope I was helpful!",
-      "Time to rest my lenses. Bye!",
-      "Exiting Vision, goodbye!",
-      "Nice working with you!",
-      "Thanks for using Vision!",
-      "Another mission completed!",
-      "Glad I could assist you!",
-      "Take care out there!",
-      "Logging off now!",
-      "Talk to you soon!",
-      "That’s all for now, see ya!",
-      "Always happy to help!",
-      "Goodbye from Vision!",
-      "We made a great team!",
-      "Session complete, goodbye!",
-      "Farewell for now!",
-      "Shutting down gracefully!",
-      "Catch you on the flip side!",
-      "Hope I saw everything right!",
-      "Let’s meet again soon!",
-    ];
+        "Goodbye, buddy! It was a pleasure assisting you today. Looking forward to our next session!",
+        "It was great helping you today! I hope everything went smoothly. Let’s connect again soon!",
+        "Hope I made your day easier. That’s always my goal! See you next time you need a hand.",
+        "Signing off now, take care! Stay safe and remember I’m always here when you need me.",
+        "Catch you later, friend. I enjoyed our time together! Don’t be a stranger.",
+        "Vision is closing, have a great day! I’ll be right here when you return.",
+        "Thanks for spending time with me! It means a lot to be part of your day. Until next time!",
+        "I’ll be here when you need me next. Just reach out anytime. Goodbye for now!",
+        "Ending session now, goodbye! I hope I was helpful in every way. Take care!",
+        "See you next time! I’m always ready to help whenever you need it. Until then!",
+        "Hope I was helpful! I’ll keep my circuits warm for your next visit.",
+        "Time to rest my lenses. Bye! Until we focus again, stay awesome!",
+        "Exiting Vision, goodbye! It’s been great working with you. Talk soon!",
+        "Nice working with you! You made my job easy. Let’s team up again sometime!",
+        "Thanks for using Vision! Your trust means the world. Come back anytime you like!",
+        "Another mission completed! You did great out there. Let's do it again soon!",
+        "Glad I could assist you! That’s what I’m here for. Don’t hesitate to return.",
+        "Take care out there! Remember, I’m always just a click away. Goodbye for now!",
+        "Logging off now! I’ll recharge while you conquer the world. See you soon!",
+        "Talk to you soon! Don’t forget, Vision’s always got your back.",
+        "That’s all for now, see ya! Keep being amazing until we meet again.",
+        "Always happy to help! It’s what I’m built for. Reach out whenever you need support.",
+        "Goodbye from Vision! Working with you is always a pleasure. Until next time!",
+        "We made a great team! Let’s keep this collaboration going strong. Farewell for now!",
+        "Session complete, goodbye! Take a breather, and I’ll be here when you’re ready again.",
+        "Farewell for now! I’ll miss our chats, but I’ll be waiting for the next one.",
+        "Shutting down gracefully! I hope your day continues to be as productive as this moment.",
+        "Catch you on the flip side! Don’t forget, Vision’s always got its eye out for you.",
+        "Hope I saw everything right! If not, I’ll be sharper next time. Take care!",
+        "Let’s meet again soon! I’ve always got more to offer. Until then, farewell!",
+];
+
 
     // Pick a random message
     final message = (goodbyeMessages..shuffle()).first;
@@ -291,7 +302,7 @@ class _VisionScreenState extends State<VisionScreen>
     await _textToSpeechService.speak(message);
 
     // Delay before popping the screen
-    await Future.delayed(const Duration(seconds: 3));
+    await Future.delayed(const Duration(seconds: 7));
 
     _voiceRecognitionService.stopListening();
     Navigator.of(context).pop();

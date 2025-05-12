@@ -32,8 +32,8 @@ class VoiceRecognitionService {
           onResult?.call(result.recognizedWords);
         }
       },
-      listenFor: const Duration(seconds: 10),
-      pauseFor: const Duration(seconds: 3),
+      listenFor: const Duration(seconds: 15),
+      pauseFor: const Duration(seconds: 5),
       partialResults: true,
       localeId: 'en_US',
       cancelOnError: false,
